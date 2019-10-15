@@ -76,23 +76,67 @@
 
 // require 'Set'
 
-function twoSum(array,target){
+// function twoSum(array,target){
 
-let sortedArr = array.sort((x,y)=> x-y);
-let left = 0
-let right = sortedArr.length - 1
-let coords 
-    for (i=0; i < sortedArr.length; i++){
-      if (sortedArr[left] + sortedArr[right] > target){
-        right --
-      } else if (sortedArr[left] + sortedArr[right] < target){
-        left ++
-      }else if (sortedArr[left] + sortedArr[right] === target){
-        return [sortedArr[left], sortedArr[right]];
-      }
-    }
-    return [];
+// let sortedArr = array.sort((x,y)=> x-y);
+// let left = 0
+// let right = sortedArr.length - 1
+// let coords 
+//     for (i=0; i < sortedArr.length; i++){
+//       if (sortedArr[left] + sortedArr[right] > target){
+//         right --
+//       } else if (sortedArr[left] + sortedArr[right] < target){
+//         left ++
+//       }else if (sortedArr[left] + sortedArr[right] === target){
+//         return [sortedArr[left], sortedArr[right]];
+//       }
+//     }
+//     return [];
+// }
+
+
+// console.log(twoSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+
+
+
+
+
+
+// Determine whether an integer is a palindrome.
+// An integer is a palindrome when it reads 
+// the same backward as forward.
+
+
+//   Input: 121
+// Output: true
+
+function isPal(integer) {
+  let input = integer.toString().split('');
+  let reversedInput = input.slice().reverse();
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] !== reversedInput[i]) return false;
+  }
+  return true;
 }
 
+console.log(isPal(3))
+console.log(isPal(32))
+console.log(isPal(-121))
+console.log(isPal(121))
 
-console.log(twoSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+// input = input as array
+// reversed = input array reversed
+// if integer length is 1 return true
+// for length of input 
+// is any input[el] NOT === reversed[el]
+// return false
+// return true
+
+
+// Input: -121
+// Output: false
+
+// Input: 10
+// Output: false
+// Explanation: Reads 01 from right to left.Therefore it is not a palindrome.
