@@ -110,20 +110,20 @@
 //   Input: 121
 // Output: true
 
-function isPal(integer) {
-  let input = integer.toString().split('');
-  let reversedInput = input.slice().reverse();
+// function isPal(integer) {
+//   let input = integer.toString().split('');
+//   let reversedInput = input.slice().reverse();
 
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] !== reversedInput[i]) return false;
-  }
-  return true;
-}
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] !== reversedInput[i]) return false;
+//   }
+//   return true;
+// }
 
-console.log(isPal(3))
-console.log(isPal(32))
-console.log(isPal(-121))
-console.log(isPal(121))
+// console.log(isPal(3))
+// console.log(isPal(32))
+// console.log(isPal(-121))
+// console.log(isPal(121))
 
 // input = input as array
 // reversed = input array reversed
@@ -140,3 +140,64 @@ console.log(isPal(121))
 // Input: 10
 // Output: false
 // Explanation: Reads 01 from right to left.Therefore it is not a palindrome.
+
+
+
+
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+  Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+
+
+return false when... 
+there is only a left brace or a right brace 
+you are interupting an otherwise correct move 
+the next brace is different type and is a closing brace after having an open brace
+
+
+return true if there is exactly 1 left and right brace that isnt blocked by  
+a lone brace
+
+
+
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+  Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+
+
+
+Example 1:
+
+Input: "()"
+Output: true
+Example 2:
+
+Input: "()[]{}"
+Output: true
+Example 3:
+
+Input: "(]"
+Output: false
+Example 4:
+
+Input: "([)]"
+Output: false
+Example 5:
+
+Input: "{[]}"
+Output: true
+
+
+
+grab each character 
+determine if its a closing brace and there is an immediate closing brace,
+skip the next index as it is the closing brace 
+
