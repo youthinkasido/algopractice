@@ -144,60 +144,77 @@
 
 
 
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+// Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
-An input string is valid if:
+// An input string is valid if:
 
-  Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
-Note that an empty string is also considered valid.
-
-
-return false when... 
-there is only a left brace or a right brace 
-you are interupting an otherwise correct move 
-the next brace is different type and is a closing brace after having an open brace
+//   Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Note that an empty string is also considered valid.
 
 
-return true if there is exactly 1 left and right brace that isnt blocked by  
-a lone brace
+// return false when... 
+// there is only a left brace or a right brace 
+// you are interupting an otherwise correct move 
+// the next brace is different type and is a closing brace after having an open brace
 
 
-
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
-An input string is valid if:
-
-  Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
-Note that an empty string is also considered valid.
+// return true if there is exactly 1 left and right brace that isnt blocked by  
+// a lone brace
 
 
 
-Example 1:
+// Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
-Input: "()"
-Output: true
-Example 2:
+// An input string is valid if:
 
-Input: "()[]{}"
-Output: true
-Example 3:
-
-Input: "(]"
-Output: false
-Example 4:
-
-Input: "([)]"
-Output: false
-Example 5:
-
-Input: "{[]}"
-Output: true
+//   Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Note that an empty string is also considered valid.
 
 
 
-grab each character 
-determine if its a closing brace and there is an immediate closing brace,
-skip the next index as it is the closing brace 
+// Example 1:
+
+// Input: "()"
+// Output: true
+// Example 2:
+
+// Input: "()[]{}"
+// Output: true
+// Example 3:
+
+// Input: "(]"
+// Output: false
+// Example 4:
+
+// Input: "([)]"
+// Output: false
+// Example 5:
+
+// Input: "{[]}"
+// Output: true
+
+
+
+// grab each character 
+// determine if its a closing brace and there is an immediate closing brace,
+// skip the next index as it is the closing brace 
+
+class LinkedListNode{
+  constructor(data){
+    this.head = data; 
+    this.next = null;
+  }
+}
+
+let head = new LinkedListNode(5)
+head.next = new LinkedListNode(10)
+head.next.next = new LinkedListNode(15)
+
+let current = head 
+while (current !== null){
+  console.log(current.head)
+  current = current.next
+}
 
